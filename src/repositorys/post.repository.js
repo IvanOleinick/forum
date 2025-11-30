@@ -22,7 +22,7 @@ class PostRepository {
     }
 
     async findPostByAuthor(author) {
-        return Post.find({ author });
+        return Post.find({ author :new RegExp(`^${author}$`, 'i')});
     }
 
     async addComment(postId, commentData) {

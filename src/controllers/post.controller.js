@@ -75,7 +75,6 @@ class PostController {
 
     async findPostByPeriod(req, res, next) {
         try {
-            // /posts/period?dateFrom=YYYY-MM-DD&dateTo=YYYY-MM-DD
             const { dateFrom, dateTo } = req.query;
             const posts = await postService.findPostByPeriod(
                 dateFrom,
